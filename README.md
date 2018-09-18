@@ -64,14 +64,15 @@ make build
 ### Run server
 ```
 $ ./bin/server
-2018/09/18 14:51:25 Listening on :7777
-2018/09/18 14:51:28 Receive message hi John
+2018/09/18 16:11:42 Listening on localhost:7777
+2018/09/18 16:11:45 authenticated client: john
+2018/09/18 16:11:45 Receive message hi John
 ```
 
 ### run client
 ```
 $ bin/client
-2018/09/18 14:51:28 Response from server: Hello John
+2018/09/18 16:11:45 Response from server: Hello John
 ```
 
 ## makefile help
@@ -79,3 +80,5 @@ $ bin/client
 ```shell
 make help
 ```
+
+<!--https://medium.com/pantomath/how-we-use-grpc-to-build-a-client-server-system-in-go-dd20045fa1c2-->
