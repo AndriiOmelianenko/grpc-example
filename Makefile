@@ -5,7 +5,7 @@ PKG := "github.com/AndriiOmelianenko/grpc-example"
 SERVER_PKG_BUILD := "${PKG}/server"
 CLIENT_PKG_BUILD := "${PKG}/client"
 
-.PHONY: all build api build_server build_client
+.PHONY: build api build_server build_client
 
 api/api.pb.go: api/api.proto
 	@protoc -I api/ \
@@ -24,8 +24,6 @@ build_client: mod api ## Build the binary file for client
 	@go build -i -v -o $(CLIENT_OUT) $(CLIENT_PKG_BUILD)
 
 build: build_server build_client ## Build the binary file for server and client
-
-all: api build ## Auto-generate grpc go sources and build the binary file for server and client
 
 clean: ## Remove previous builds
 	@rm -v $(SERVER_OUT) $(CLIENT_OUT) $(API_OUT)
